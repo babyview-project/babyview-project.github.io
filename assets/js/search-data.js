@@ -10,7 +10,7 @@ ninja.data = [{
       window.location.href = "/";
     },
   },{id: "nav-people",
-          title: "People",
+          title: "people",
           description: "Meet the BabyView team!",
           section: "Navigation",
           handler: () => {
