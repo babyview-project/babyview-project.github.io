@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-dataset",
           title: "dataset",
-          description: "A growing collection of your cool projects.",
+          description: "Information about the current BabyView dataset",
           section: "Navigation",
           handler: () => {
             window.location.href = "/dataset/";
