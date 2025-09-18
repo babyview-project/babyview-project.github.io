@@ -1,6 +1,6 @@
 ---
 layout: page
-title: camera
+title: Camera
 permalink: /camera/
 description: Information about the BabyView camera design
 nav: true
