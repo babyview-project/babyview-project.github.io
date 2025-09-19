@@ -1,6 +1,6 @@
 ---
 layout: page
-title: dataset
+title: Dataset
 permalink: /dataset/
 description: Information about the current BabyView dataset
 nav: true
