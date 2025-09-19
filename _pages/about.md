@@ -18,7 +18,7 @@ You can find information on our current [publications]({{ '/publications/' | rel
 
 ## Data Snapshot
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/appQ7P6moc6knzYzN/shrfUtt2gWNMcQN5V" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe><br><br>
+<iframe class="airtable-embed" src="https://airtable.com/embed/appQ7P6moc6knzYzN/shrfUtt2gWNMcQN5V" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe><br>
 
 ## Funding
 
