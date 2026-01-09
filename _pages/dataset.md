@@ -29,7 +29,7 @@ Egocentric video data from children in their home and school environments contai
 
 # Data Releases
 
-Currently, we are currently waiting on Databrary to develop their API to enable automatic upload of the videos, as manual upload is laborious for a dataset of this size, even for only our current release. We will update this page as soon as we are able to provide a concrete timeline. We have, however, released [our Babyview Preschool dataset on Databrary](https://databrary.org/volume/1856). 
+[Our BabyView 2025.1 release](https://www.databrary.org/volume/1882) is currently available on Databrary. We have also released [our BabyView Preschool dataset](https://databrary.org/volume/1856). Please refer to the table below for information about future releases.
 
 ## Release Timelines 
 
