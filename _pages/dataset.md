@@ -11,7 +11,7 @@ horizontal: false
 
 # Overview
 
-The BabyView project is intended to create openly available data for researchers to use to both characterize early learning environments as well as to build computational models to try to better understand cognition. Data collection is still currently ongoing, and our goal is to collect one child’s-years worth of data (4000 hours). Our first release (2025.1) totals 894 hours and our second release totals 1428 hours. We anticipate that active data collection will be ongoing through the 2026 – 2027 academic year.
+The BabyView project is intended to create openly available data for researchers to use to both characterize early learning environments as well as to build computational models to try to better understand cognition. Data collection is still currently ongoing, and our goal is to collect one child’s-years worth of data (4000 hours). Our first release (2025.1) totals 894 hours and our second release (2025.2) totals 1428 hours. We anticipate that active data collection will be ongoing through the 2026 – 2027 academic year.
 
 <div style="text-align: center;">
 <video width="320" controls>
