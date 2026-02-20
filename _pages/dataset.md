@@ -11,7 +11,7 @@ horizontal: false
 
 # Overview
 
-The BabyView project is intended to create openly available data for researchers to use to both characterize early learning environments as well as to build computational models to try to better understand cognition. Data collection is still currently ongoing, and our goal is to collect one child’s-years worth of data (4000 hours); our current release (2025.1) totals 868 hours. We anticipate that active data collection will be ongoing through 2026.
+The BabyView project is intended to create openly available data for researchers to use to both characterize early learning environments as well as to build computational models to try to better understand cognition. Data collection is still currently ongoing, and our goal is to collect one child’s-years worth of data (4000 hours). Our first release (2025.1) totals 894 hours and our second release totals 1428 hours. We anticipate that active data collection will be ongoing through the 2026 – 2027 academic year.
 
 <div style="text-align: center;">
 <video width="320" controls>
@@ -23,13 +23,13 @@ The BabyView project is intended to create openly available data for researchers
 
 # Consent and Privacy
 
-Egocentric video data from children in their home and school environments contain more sensitive information than videos in egocentric videos by adults. Participating families provide full consent for the data that are shared at the time of recording and also have a 6 month period after recording when they can retract any portion of their recording. To ensure BabyView data are accessible to researchers while protecting the privacy of participants, we currently distribute the data through [Databrary](https://nyu.databrary.org/), a US National Institutes of Health-funded site designed specifically for the distribution of developmental video data. Access to data on Databrary requires investigators be authorized via an institutional agreement that bars reidentification of participants and redistribution of data. 
+Egocentric video data from children in their home and school environments contain more sensitive information than videos in egocentric videos by adults. Participating families provide full consent for the data that are shared at the time of recording and also have a six month period after recording when they can retract any portion of their recording. To ensure BabyView data are accessible to researchers while protecting the privacy of participants, we currently distribute the data through [Databrary](https://nyu.databrary.org/), a US National Institutes of Health-funded site designed specifically for the distribution of developmental video data. Access to data on Databrary requires investigators be authorized via an institutional agreement that bars reidentification of participants and redistribution of data. 
 
 ---
 
 # Data Releases
 
-[Our BabyView 2025.1 release](https://www.databrary.org/volume/1882) is currently available on Databrary. We have also released [our BabyView Preschool dataset](https://databrary.org/volume/1856). Please refer to the table below for information about future releases.
+[The main BabyView dataset](https://www.databrary.org/volume/1882) is currently available on Databrary (see below for our tagged releases). We have also released [our BabyView Preschool dataset](https://databrary.org/volume/1856). Please refer to the table below for information about future releases.
 
 ## Release Timelines 
 
@@ -46,6 +46,6 @@ We collect both demographic data from each participating family as well as vocab
 The BabyView camera also records accelerometer and gyroscope data, which can be used to estimate children’s head motion while they are wearing the camera. These data will be openly shared via OSF since Databrary has file type restrictions, but will be linked to the individual video files via hashed IDs.
 
 ## Airtable database
-We use Airtable for managing video and participant information, and are developing an r package that can be used to download and link metadata for each video. Please check back here for updates on usage and installation.
+We use Airtable for managing video and participant information, and are developing an `R` package that can be used to download and link metadata for each video. Please check back here for updates on usage and installation.
 
 
