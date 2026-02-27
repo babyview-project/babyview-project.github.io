@@ -33,7 +33,7 @@ Egocentric video data from children in their home and school environments contai
 
 ## Release Timelines 
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/appQ7P6moc6knzYzN/shro8zErAbkGWi84R" frameborder="0" onmousewheel="" width="100%" height="300" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<iframe class="airtable-embed" src="https://airtable.com/embed/appQ7P6moc6knzYzN/shrfUtt2gWNMcQN5V" frameborder="0" onmousewheel="" width="100%" height="700" style="background: transparent; border: 1px solid #ccc;"></iframe><br>
 
 ---
 
