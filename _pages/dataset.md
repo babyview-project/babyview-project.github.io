@@ -38,12 +38,10 @@ Egocentric video data from children in their home and school environments contai
 # Metadata 
 
 ## Participant metadata 
-We collect both demographic data from each participating family as well as vocabulary checklist surveys every 3 months for English-speaking families.  These data will be released with the upcoming video dataset via Databrary.
+We collect both demographic data from each participating family as well as vocabulary checklist surveys (MacArthur-Bates Communicative Development Inventories (CDIs)) every 3 months for English-speaking families. The demographic data includes information about age of the child at the time of recording, the languages spoken at home, and a reported percent of English that the child hears. As of the 2025.2 release, CDI administration data includes 45 English-WG administrations, 51 English-WS administrations, 3 Spanish-WG administrations, and 3 Spanish-WS administrations, stored in CSV files. These data have been released with the video dataset via Databrary. 
+
+## Transcripts
+We transcribe and diarize all videos in the dataset and include these annotations on Databrary as well in CSV files. Each row of each file contains the video ID, a token, the utterance that the token appears in, the start and end time for the token, the transcription model's confidence in the token, and the speaker identity of the token (KCHI (target child), OCHI (other child), FEM (female adult), MAL (male adult), Unknown). Videos were transcribed using the WhisperX large-v3 model. Speaker types were generated using VTC 2.0. Given that transcripts were automatically generated, they do not follow conventions detailed by CHILDES or the CHAT transcription format.
 
 ## Accelerometer/gyroscope data
-The BabyView camera also records accelerometer and gyroscope data, which can be used to estimate children’s head motion while they are wearing the camera. These data will be openly shared via OSF since Databrary has file type restrictions, but will be linked to the individual video files via hashed IDs.
-
-## Airtable database
-We use Airtable for managing video and participant information, and are developing an `R` package that can be used to download and link metadata for each video. Please check back here for updates on usage and installation.
-
-
+The BabyView camera also records accelerometer and gyroscope data, which can be used to estimate children’s head motion while they are wearing the camera. Please check back here for updates on availability of these data.
