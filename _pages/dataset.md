@@ -29,7 +29,7 @@ Egocentric video data from children in their home and school environments contai
 
 # Data Releases
 
-[The main BabyView dataset](https://www.databrary.org/volume/1882) is currently available on Databrary\. We have also released [our BabyView Preschool dataset](https://databrary.org/volume/1856). [Camera inertial-motion (IMU) and telemetry data](https://stanford.redivis.com/datasets/e7we-asyc0tmc7) for the BabyView dataset are available on Redivis. Please refer to the table below for information about releases and data quantity.
+[The main BabyView dataset](https://www.databrary.org/volume/1882) is currently available on Databrary\. We have also released [our BabyView Preschool dataset](https://databrary.org/volume/1856). [BabyView IMU data](https://stanford.redivis.com/datasets/e7we-asyc0tmc7) are now available on Redivis. Please refer to the table below for information about releases and data quantity.
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/appQ7P6moc6knzYzN/shrfUtt2gWNMcQN5V" frameborder="0" scrolling="no" width="100%" height="700" style="background: transparent; border: 0px solid #ccc;"></iframe><br>
 
@@ -44,4 +44,5 @@ We collect both demographic data from each participating family as well as vocab
 We transcribe and diarize all videos in the dataset and include these annotations on Databrary as well in CSV files. Each row of each file contains the video ID, a token, the utterance that the token appears in, the start and end time for the token, the transcription model's confidence in the token, and the speaker identity of the token (KCHI (target child), OCHI (other child), FEM (female adult), MAL (male adult), Unknown). Videos were transcribed using the WhisperX large-v3 model. Speaker types were generated using VTC 2.0. Given that transcripts were automatically generated, they do not follow conventions detailed by CHILDES or the CHAT transcription format.
 
 ## Accelerometer/gyroscope data
-The BabyView camera also records accelerometer and gyroscope data, which can be used to estimate children’s head motion while they are wearing the camera. Please check back here for updates on availability of these data.
+The BabyView camera also records accelerometer and gyroscope data, which can be used to estimate children’s head motion while they are wearing the camera. These data are now available as part of the BabyView IMU data release on Redivis. Each file contains the GoPro telemetry from one BabyView recording, extracted from the video's GPMF track: a merged ~200 Hz IMU CSV file with accelerometer, gyroscope, and gravity measurements, as well as additional camera telemetry streams such as orientation quaternions (CORI/IORI).
+
