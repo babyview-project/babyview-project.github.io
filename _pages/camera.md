@@ -4,7 +4,7 @@ title: Camera
 permalink: /camera/
 description: Information about the BabyView camera design
 nav: true
-nav_order: 3
+nav_order: 4
 horizontal: false
 ---
 <div style="text-align: center;">
@@ -17,7 +17,7 @@ The BabyView system was developed in collaboration with Daylight, Inc., a produc
 
 All materials – including design documentation, safety testing protocols, assembly instructions (with detailed photos), pilot data, data management protocols, and sample participant instructions – are available on the [BabyView OSF page](https://osf.io/kwvxu/).
 
-📄 Our paper detailing the design process is published in *Behavioral Research Methods* [here](https://doi.org/10.3758/s13428-023-02206-1).  
+📄 Our paper detailing the design process is published in *Behavior Research Methods* [here](https://doi.org/10.3758/s13428-023-02206-1).  
 📝 An open-access version is also available on [PsyArXiv](https://psyarxiv.com/238jk).  
 🎥 See below for the updated GoPro Hero version of the build.
 📘 The detailed instruction manual for parents is linked on the OSF page and directly available [here](https://docs.google.com/document/d/1uODmIMQMlzofB-oz8A-zfd52h-UdplrrAQ6fKHX4THQ/edit).

@@ -14,13 +14,31 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 
 The BabyView Project is a research initiative dedicated to capturing children’s everyday experiences via high-resolution videos taken from the infant perspective, and to using the resulting video data to better understand cognitive development. Our dataset is currently the largest open video dataset of children’s everyday experience to date, both in terms of the number of hours and the diversity of the participating families; data collection is currently ongoing.
 
-You can find information on our current [publications]({{ '/publications/' | relative_url }}), how to access the [releases]({{ '/dataset/' | relative_url }}) of the dataset, and the specifics about the build of the BabyView [camera]({{ '/camera/' | relative_url }}).
+<div class="row mt-4 mb-2 bv-audience">
+  <div class="col-sm-6 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">For researchers</h5>
+        <p class="card-text">What's in the <a href="{{ '/dataset/' | relative_url }}">dataset</a> and how to access it, our <a href="{{ '/data-use/' | relative_url }}">data use and ethics guidelines</a>, the <a href="{{ '/camera/' | relative_url }}">camera</a> design, and our <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">For families</h5>
+        <p class="card-text">How to <a href="{{ '/families/' | relative_url }}">take part in BabyView</a>, how we keep your videos secure, and how AI is used in our research.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Data Release Snapshot
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/appQ7P6moc6knzYzN/shro8zErAbkGWi84R?viewControls=off" scrolling="no" frameborder="0" onmousewheel="" width="100%" height="300" style="background: transparent; border: 0px solid #ccc;"></iframe>
+{% assign bv = site.data.bv_summary %}
+So far we have collected **{{ bv.total_hours | number_with_delimiter }} hours** of video from **{{ bv.total_children }} children**. See the [dataset page]({{ '/dataset/' | relative_url }}) for details and access.
 
-<br>
+{% include bv_releases_table.liquid compact=true %}
 
 ## Funding
 
