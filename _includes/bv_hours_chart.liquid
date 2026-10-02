@@ -1,0 +1,65 @@
+{% comment %}
+  Hours of video collected over time, by dataset. Data from _data/bv_summary.json,
+  drawn in the browser with Observable Plot.
+{% endcomment %}
+<div class="bv-chart">
+  <div class="btn-group btn-group-sm mb-2" role="group" aria-label="Chart view">
+    <button type="button" class="btn btn-outline-secondary active" data-view="cumulative">Total over time</button>
+    <button type="button" class="btn btn-outline-secondary" data-view="weekly">Hours per week</button>
+  </div>
+  <div id="bv-hours-chart" style="min-height: 360px"></div>
+</div>
+
+<script type="module">
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
+
+  const weekly = {{ site.data.bv_summary.weekly | jsonify }}.map((d) => ({ ...d, week: new Date(d.week) }));
+  const datasets = ["BV-main", "Preschool", "Ego Single-Child"];
+  const color = { domain: datasets, range: ["#4e79a7", "#f28e2b", "#59a14f"], legend: true };
+
+  // Running total per dataset, with every week present so the stacked areas line up.
+  const weeks = [...new Set(weekly.map((d) => +d.week))].sort((a, b) => a - b);
+  const byKey = new Map(weekly.map((d) => [`${+d.week}|${d.dataset}`, d.hours]));
+  const cumulative = datasets.flatMap((dataset) => {
+    let total = 0;
+    return weeks.map((w) => ({ week: new Date(w), dataset, hours: (total += byKey.get(`${w}|${dataset}`) ?? 0) }));
+  });
+
+  const el = document.getElementById("bv-hours-chart");
+  const width = () => el.clientWidth;
+
+  function draw(view) {
+    const common = { width: width(), height: 360, marginLeft: 50, color, x: { label: null }, style: { fontSize: "12px" } };
+    const chart =
+      view === "cumulative"
+        ? Plot.plot({
+            ...common,
+            y: { label: "Total hours collected", grid: true },
+            marks: [
+              Plot.areaY(cumulative, { x: "week", y: "hours", fill: "dataset", order: datasets, tip: true }),
+              Plot.ruleY([4000], { strokeDasharray: "4,3" }),
+              Plot.text([4000], { y: (d) => d, frameAnchor: "left", dx: 4, dy: 10, text: () => "Goal: 4,000 hours" }),
+              Plot.ruleY([0]),
+            ],
+          })
+        : Plot.plot({
+            ...common,
+            y: { label: "Hours recorded per week", grid: true },
+            marks: [
+              Plot.rectY(weekly, { x: "week", y: "hours", fill: "dataset", interval: "monday", order: datasets, tip: true }),
+              Plot.ruleY([0]),
+            ],
+          });
+    el.replaceChildren(chart);
+  }
+
+  let view = "cumulative";
+  document.querySelectorAll(".bv-chart [data-view]").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      view = btn.dataset.view;
+      document.querySelectorAll(".bv-chart [data-view]").forEach((b) => b.classList.toggle("active", b === btn));
+      draw(view);
+    })
+  );
+  new ResizeObserver(() => draw(view)).observe(el);
+</script>

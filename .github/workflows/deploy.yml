@@ -60,6 +60,9 @@ on:
       - "!INSTALL.md"
       - "!README.md"
   workflow_dispatch:
+  schedule:
+    # weekly rebuild to refresh dataset statistics from Airtable
+    - cron: "0 12 * * 1"
 
 permissions:
   contents: write
@@ -68,6 +71,8 @@ jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
+    env:
+      AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -88,6 +93,10 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
+      - name: Fetch dataset statistics 📊
+        # secrets are unavailable on fork PRs; the committed _data/bv_summary.json is used then
+        if: env.AIRTABLE_TOKEN != ''
+        run: python3 bin/fetch_data_summary.py
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick

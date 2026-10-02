@@ -1,0 +1,59 @@
+name: Deploy preview
+
+# Builds the reorg branch and publishes it to
+# https://babyview-project.github.io/babyview-preview/ for team review.
+# Production (deploy.yml) is unaffected.
+
+on:
+  push:
+    branches:
+      - reorg
+  workflow_dispatch:
+
+concurrency:
+  group: preview
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    env:
+      AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+      - name: Setup Ruby 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+      - name: Setup Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip" # caching pip dependencies
+      - name: Fetch dataset statistics 📊
+        if: env.AIRTABLE_TOKEN != ''
+        run: python3 bin/fetch_data_summary.py
+      - name: Install and Build 🔧
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip3 install --upgrade nbconvert
+          export JEKYLL_ENV=production
+          bundle exec jekyll build --baseurl /babyview-preview
+      - name: Purge unused CSS 🧹
+        run: |
+          npm install -g purgecss
+          purgecss -c purgecss.config.js
+      - name: Keep preview out of search engines 🙈
+        run: |
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+          touch _site/.nojekyll
+      - name: Deploy to preview repo 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
+          repository-name: babyview-project/babyview-preview
+          branch: gh-pages
+          ssh-key: ${{ secrets.PREVIEW_DEPLOY_KEY }}
+          single-commit: true

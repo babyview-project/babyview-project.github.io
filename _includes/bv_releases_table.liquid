@@ -1,0 +1,37 @@
+{% comment %}
+  Release summary table from _data/bv_summary.json (built by bin/fetch_data_summary.py).
+  Pass compact=true to omit the processing date and notes columns.
+{% endcomment %}
+{% assign bv = site.data.bv_summary %}
+<div class="table-responsive">
+  <table class="table table-sm bv-releases">
+    <thead>
+      <tr>
+        <th>Release</th>
+        <th>Status</th>
+        <th class="text-right">Hours</th>
+        <th class="text-right">Children</th>
+        {% unless include.compact %}<th>Processed</th>{% endunless %}
+        <th>Released</th>
+        {% unless include.compact %}<th>Notes</th>{% endunless %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in bv.releases %}
+        <tr>
+          <td><strong>{{ r.release }}</strong></td>
+          <td>{{ r.status }}</td>
+          <td class="text-right">{{ r.hours | number_with_delimiter }}</td>
+          <td class="text-right">{{ r.children }}</td>
+          {% unless include.compact %}<td>{{ r.processed | date: '%b %Y' }}</td>{% endunless %}
+          <td>{% if r.released %}{{ r.released | date: '%b %Y' }}{% else %}&ndash;{% endif %}</td>
+          {% unless include.compact %}<td>{{ r.notes }}</td>{% endunless %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p class="bv-caption">
+  Each main release includes all the data in the previous one, so hours are not additive across rows. Hours include all
+  datasets in a release. Updated {{ bv.updated | date: '%B %-d, %Y' }}.
+</p>
