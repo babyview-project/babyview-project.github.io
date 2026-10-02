@@ -36,7 +36,7 @@ BabyView is longitudinal: most families record over many months, so each child c
 
 {% include bv_child_chart.liquid %}
 
-<p class="bv-caption">Cumulative hours recorded by each child in the main dataset (BV-main), by the child's age at recording. Each line is one child.</p>
+<p class="bv-caption">Main dataset (BV-main) only. Top: hours of video recorded at each month of age. Bottom: cumulative hours recorded by each child, by age at recording; each line is one child.</p>
 
 ---
 

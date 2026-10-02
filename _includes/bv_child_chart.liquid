@@ -1,7 +1,9 @@
 {% comment %}
-  Cumulative hours recorded per BV-main child, by age. Data from _data/bv_summary.json
+  Hours recorded by age (histogram) and cumulative hours per BV-main child, by age.
+  Data from _data/bv_summary.json
   (children numbered by starting age), drawn in the browser with Observable Plot.
 {% endcomment %}
+<div id="bv-age-hist" style="min-height: 260px"></div>
 <div id="bv-child-chart" style="min-height: 400px"></div>
 
 <script type="module">
@@ -10,16 +12,36 @@
   const series = {{ site.data.bv_summary.children | jsonify }};
   const points = series.flatMap((s, i) => s.map(([age, hours]) => ({ child: i + 1, age, hours })));
 
+  // hours recorded at each age point: differences of each child's cumulative series
+  const byAge = series.flatMap((s) => s.map(([age, hours], j) => ({ age, hours: hours - (j ? s[j - 1][1] : 0) })));
+
+  const ageDomain = [0, Math.ceil(Math.max(...points.map((d) => d.age)))];
+
+  const hist = document.getElementById("bv-age-hist");
   const el = document.getElementById("bv-child-chart");
 
   function draw() {
+    hist.replaceChildren(
+      Plot.plot({
+        width: hist.clientWidth,
+        height: 260,
+        marginLeft: 50,
+        style: { fontSize: "12px" },
+        x: { label: "Age at recording (months)", domain: ageDomain },
+        y: { label: "Hours recorded", grid: true },
+        marks: [
+          Plot.rectY(byAge, Plot.binX({ y: "sum" }, { x: "age", y: "hours", interval: 1, fill: "#4e79a7", inset: 0.5, tip: true })),
+          Plot.ruleY([0]),
+        ],
+      })
+    );
     el.replaceChildren(
       Plot.plot({
         width: el.clientWidth,
         height: 400,
         marginLeft: 50,
         style: { fontSize: "12px" },
-        x: { label: "Age (months)", grid: true },
+        x: { label: "Age (months)", domain: ageDomain, grid: true },
         y: { label: "Cumulative hours per child", grid: true },
         color: { type: "ordinal", scheme: "turbo" },
         marks: [
