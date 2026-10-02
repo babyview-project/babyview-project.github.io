@@ -30,6 +30,14 @@ The BabyView project is intended to create openly available data for researchers
 
 <p class="bv-caption">Hours of video by recording week. <strong>BV-main</strong> is the main home-recording dataset; <strong>Preschool</strong> contains recordings made in a preschool classroom; <strong>Ego Single-Child</strong> contains recordings of a single child.</p>
 
+## Recordings per child
+
+BabyView is longitudinal: most families record over many months, so each child contributes video across a range of ages.
+
+{% include bv_child_chart.liquid %}
+
+<p class="bv-caption">Cumulative hours recorded by each child in the main dataset (BV-main), by the child's age at recording. Each line is one child.</p>
+
 ---
 
 # Data releases

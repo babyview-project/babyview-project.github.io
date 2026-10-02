@@ -1,0 +1,43 @@
+{% comment %}
+  Cumulative hours recorded per BV-main child, by age. Data from _data/bv_summary.json
+  (children numbered by starting age), drawn in the browser with Observable Plot.
+{% endcomment %}
+<div id="bv-child-chart" style="min-height: 400px"></div>
+
+<script type="module">
+  import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
+
+  const series = {{ site.data.bv_summary.children | jsonify }};
+  const points = series.flatMap((s, i) => s.map(([age, hours]) => ({ child: i + 1, age, hours })));
+
+  const el = document.getElementById("bv-child-chart");
+
+  function draw() {
+    el.replaceChildren(
+      Plot.plot({
+        width: el.clientWidth,
+        height: 400,
+        marginLeft: 50,
+        style: { fontSize: "12px" },
+        x: { label: "Age (months)", grid: true },
+        y: { label: "Cumulative hours per child", grid: true },
+        color: { type: "ordinal", scheme: "turbo" },
+        marks: [
+          Plot.ruleY([0]),
+          Plot.line(points, { x: "age", y: "hours", z: "child", stroke: "child", strokeWidth: 1.5, curve: "step-after" }),
+          Plot.tip(
+            points,
+            Plot.pointer({
+              x: "age",
+              y: "hours",
+              stroke: "child",
+              title: (d) => `Child ${d.child}\n${d.hours} hours by ${d.age} months`,
+            })
+          ),
+        ],
+      })
+    );
+  }
+
+  new ResizeObserver(draw).observe(el);
+</script>
