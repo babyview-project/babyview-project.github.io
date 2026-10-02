@@ -1423,3 +1423,15 @@ figure.cover {
     color: #23212d !important;
   }
 }
+
+// BabyView dataset summary (releases table and chart captions)
+.bv-caption {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+.navbar-nav .nav-link {
+  white-space: nowrap;
+}
+.bv-audience .card-text {
+  color: var(--global-text-color);
+}
