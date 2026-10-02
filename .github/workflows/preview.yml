@@ -46,8 +46,9 @@ jobs:
           npm install -g purgecss
           purgecss -c purgecss.config.js
       - name: Keep preview out of search engines 🙈
+        # robots.txt only counts at the domain root (production's), so mark each page noindex
         run: |
-          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+          find _site -name '*.html' -exec sed -i 's#<head>#<head><meta name="robots" content="noindex">#' {} +
           touch _site/.nojekyll
       - name: Deploy to preview repo 🚀
         uses: JamesIves/github-pages-deploy-action@v4

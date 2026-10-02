@@ -14,12 +14,12 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 
 The BabyView Project is a research initiative dedicated to capturing children’s everyday experiences via high-resolution videos taken from the infant perspective, and to using the resulting video data to better understand cognitive development. Our dataset is currently the largest open video dataset of children’s everyday experience to date, both in terms of the number of hours and the diversity of the participating families; data collection is currently ongoing.
 
-<div class="row mt-4 mb-2 bv-audience">
+<div class="row mt-4 mb-2">
   <div class="col-sm-6 mb-3">
     <div class="card h-100">
       <div class="card-body">
         <h5 class="card-title">For researchers</h5>
-        <p class="card-text">What's in the <a href="{{ '/dataset/' | relative_url }}">dataset</a> and how to access it, our <a href="{{ '/data-use/' | relative_url }}">data use and ethics guidelines</a>, the <a href="{{ '/camera/' | relative_url }}">camera</a> design, and our <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>
+        <p>What's in the <a href="{{ '/dataset/' | relative_url }}">dataset</a> and how to access it, our <a href="{{ '/data-use/' | relative_url }}">data use and ethics guidelines</a>, the <a href="{{ '/camera/' | relative_url }}">camera</a> design, and our <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@ The BabyView Project is a research initiative dedicated to capturing children’
     <div class="card h-100">
       <div class="card-body">
         <h5 class="card-title">For families</h5>
-        <p class="card-text">How to <a href="{{ '/families/' | relative_url }}">take part in BabyView</a>, how we keep your videos secure, and how AI is used in our research.</p>
+        <p>How to <a href="{{ '/families/' | relative_url }}">take part in BabyView</a>, how we keep your videos secure, and how AI is used in our research.</p>
       </div>
     </div>
   </div>
