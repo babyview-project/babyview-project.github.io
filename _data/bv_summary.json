@@ -1,11 +1,11 @@
 {
  "updated": "2026-10-02",
- "total_hours": 3770.4,
+ "total_hours": 3771.0,
  "total_children": 99,
  "datasets": [
   {
    "dataset": "BV-main",
-   "hours": 3574.1,
+   "hours": 3574.7,
    "children": 51
   },
   {
@@ -64,6 +64,32 @@
    "processed": "2024-05-01",
    "released": null,
    "notes": "Used in original preprint but not released"
+  }
+ ],
+ "cameras": [
+  {
+   "camera": "GoPro Hero Black Bones 10",
+   "hours": 1976.3,
+   "first": "2023-03",
+   "last": "2026-09"
+  },
+  {
+   "camera": "Headlight Camera 1080P",
+   "hours": 80.8,
+   "first": "2023-06",
+   "last": "2025-12"
+  },
+  {
+   "camera": "GoPro HERO Mini",
+   "hours": 1594.2,
+   "first": "2024-10",
+   "last": "2026-09"
+  },
+  {
+   "camera": "GoPro LIT HERO",
+   "hours": 119.8,
+   "first": "2026-03",
+   "last": "2026-09"
   }
  ],
  "weekly": [
@@ -1510,12 +1536,12 @@
   {
    "week": "2026-08-31",
    "dataset": "BV-main",
-   "hours": 23.74
+   "hours": 23.88
   },
   {
    "week": "2026-09-07",
    "dataset": "BV-main",
-   "hours": 24.38
+   "hours": 24.9
   }
  ]
 }

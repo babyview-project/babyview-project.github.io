@@ -8,6 +8,8 @@ nav_order: 5
 
 <!-- _pages/publications.md -->
 
+# Publications
+
 <!-- Bibsearch Feature -->
 
 {% include bib_search.liquid %}

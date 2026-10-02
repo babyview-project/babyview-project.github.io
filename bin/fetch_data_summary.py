@@ -2,7 +2,8 @@
 """Fetch aggregate BabyView dataset statistics from Airtable for the website.
 
 Writes _data/bv_summary.json. Only aggregates are written: hours per
-dataset per recording week, per-release totals, and overall totals. No
+dataset per recording week, per-release totals, hours and recording months per camera model,
+and overall totals. No
 per-video or per-child rows ever leave this script.
 
 Requires AIRTABLE_TOKEN in the environment (read-only token for the
@@ -20,10 +21,15 @@ import urllib.request
 BASE = "appQ7P6moc6knzYzN"
 VIDEOS = "tblkRXMPT0hTIYZcu"
 RELEASES = "tblVeWx2MbrXRa6o1"
+CAMERAS = "tbl9nAHSwcreUvnrs"
 OUT = pathlib.Path(__file__).resolve().parent.parent / "_data/bv_summary.json"
 
 
 def fetch(table, fields):
+    return [r["fields"] for r in fetch_records(table, fields)]
+
+
+def fetch_records(table, fields):
     token = os.environ["AIRTABLE_TOKEN"]
     records, offset = [], None
     while True:
@@ -34,16 +40,19 @@ def fetch(table, fields):
         req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
         with urllib.request.urlopen(req) as resp:
             data = json.load(resp)
-        records += [r["fields"] for r in data["records"]]
+        records += data["records"]
         offset = data.get("offset")
         if not offset:
             return records
 
 
 def main():
-    videos = fetch(VIDEOS, ["dataset", "monday_of_recording_week", "duration_sec", "subject_id"])
+    videos = fetch(VIDEOS, ["dataset", "monday_of_recording_week", "duration_sec", "subject_id", "camera", "date"])
+    cameras = {c["id"]: c["fields"] for c in fetch_records(CAMERAS, ["Full Name"])}
     releases = fetch(RELEASES, ["Name", "Status", "Duration (hrs)", "Subject Count", "Processed", "Released", "Notes"])
 
+    camera_hours = collections.defaultdict(float)
+    camera_months = collections.defaultdict(list)
     weekly = collections.defaultdict(float)
     hours = collections.defaultdict(float)
     children = collections.defaultdict(set)
@@ -56,6 +65,11 @@ def main():
         children[dataset].update(v.get("subject_id", []))
         if week:
             weekly[(week, dataset)] += h
+        for c in v.get("camera", []):
+            name = cameras.get(c, {}).get("Full Name", "Unknown")
+            camera_hours[name] += h
+            if v.get("date"):
+                camera_months[name].append(v["date"][:7])
 
     summary = {
         "updated": datetime.date.today().isoformat(),
@@ -81,6 +95,15 @@ def main():
             key=lambda r: r["release"],
             reverse=True,
         ),
+        "cameras": [
+            {
+                "camera": c,
+                "hours": round(camera_hours[c], 1),
+                "first": min(camera_months[c], default=None),
+                "last": max(camera_months[c], default=None),
+            }
+            for c in sorted(camera_hours, key=lambda c: min(camera_months[c], default=""))
+        ],
         "weekly": [
             {"week": w, "dataset": d, "hours": round(h, 2)}
             for (w, d), h in sorted(weekly.items())

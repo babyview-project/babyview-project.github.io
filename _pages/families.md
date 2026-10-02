@@ -8,6 +8,8 @@ nav_order: 3
 horizontal: false
 ---
 
+# BabyView for families
+
 BabyView families record everyday moments of their child's life using a small camera mounted on a lightweight child-safe helmet. These recordings help scientists understand how young children see, hear, and learn about the world. Thank you to all of the families who make this research possible!
 
 ---
