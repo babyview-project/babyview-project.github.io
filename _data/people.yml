@@ -17,41 +17,35 @@
   website: https://stanford.edu/~yamins/
   image: dan_yamins.png
 
-- name: Bobby Sparks 
-  role: Project Manager
-  position: Research Professional (LangCog Lab, Stanford)
-  website: https://rbzsparks.github.io/
-  image: bobby.jpg
-
-- name: Grace Keene
-  role: Research Staff 
+- name: Alyssa Erthum
+  role: Research Staff
   position: Research Coordinator (LangCog Lab, Stanford)
   website: 
-  image: Grace_crop.png
-  
+  image: alyssa.jpeg
+
+- name: Serena Lee
+  role: Research Staff
+  position: Research Coordinator (LangCog Lab, Stanford)
+  website: 
+  image: serena.jpeg
+
 - name: Virginia A. Marchman, Ph.D.
   role: Research Staff
   position: Research Scientist (LangCog Lab, Stanford)
   website: https://profiles.stanford.edu/virginia-marchman
   image: virginia.png
 
+- name: Emma Montilla
+  role: Research Staff
+  position: Research Coordinator (LangCog Lab, Stanford)
+  website: 
+  image: emma.png
+
 - name: Victor A. Moreno
   role: Research Staff
   position: Lab Manager<br>(LangCog Lab, Stanford)
   website: 
   image: victor.jpg
-
-- name: Madison Paron
-  role: Research Staff
-  position: Research Coordinator (LangCog Lab, Stanford)
-  website: https://madisonparon.com
-  image: madison.jpeg
-
-- name: Meesha Ryan
-  role: Research Staff
-  position: Research Coordinator (LangCog Lab, Stanford)
-  website: http://www.linkedin.com/in/meesha-r-2a63461b2
-  image: Meesha.jpeg
 
 - name: Ethan Zhang
   role: Research Staff
@@ -67,7 +61,7 @@
 
 - name: Tarun Sepuri
   role: Analysis Team 
-  position: Lab Coordinator<br>(VisLearn Lab, UCSD)
+  position: Graduate Student<br>(LangCog Lab, Stanford)
   website: http://www.tarunsepuri.com
   image: tarun.jpeg
   
@@ -83,3 +77,22 @@
   website: 
   image: jane.jpg
 
+- name: Grace Keene
+  role: Alumni
+  website: 
+  image: Grace_crop.png
+
+- name: Madison Paron
+  role: Alumni
+  website: https://madisonparon.com
+  image: madison.jpeg
+
+- name: Meesha Ryan
+  role: Alumni
+  website: http://www.linkedin.com/in/meesha-r-2a63461b2
+  image: Meesha.jpeg
+
+- name: Bobby Sparks
+  role: Alumni
+  website: https://rbzsparks.github.io/
+  image: bobby.jpg
