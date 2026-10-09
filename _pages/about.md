@@ -6,8 +6,10 @@ permalink: /
 
 profile:
   align: right
-  image: about_bv.png
+  image: example_frame_1.webp
   image_circular: false # crops the image to make it circular
+  more_info: >
+    <p class="bv-caption">The child's view: a frame from a BabyView pilot recording.</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 ---
@@ -19,7 +21,7 @@ The BabyView Project is a research initiative dedicated to capturing children’
     <div class="card h-100">
       <div class="card-body">
         <h5 class="card-title">For researchers</h5>
-        <p>What's in the <a href="{{ '/dataset/' | relative_url }}">dataset</a> and how to access it, our <a href="{{ '/data-use/' | relative_url }}">data use and ethics guidelines</a>, the <a href="{{ '/camera/' | relative_url }}">camera</a> design, and our <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>
+        <p>What's in the <a href="{{ '/dataset/' | relative_url }}">dataset</a> and <a href="{{ '/access/' | relative_url }}">how to access it</a>, our <a href="{{ '/data-use/' | relative_url }}">data use and ethics guidelines</a>, the <a href="{{ '/camera/' | relative_url }}">camera</a> design, and our <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>
       </div>
     </div>
   </div>

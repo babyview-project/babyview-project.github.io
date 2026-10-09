@@ -5,7 +5,7 @@ nav_title: Ethics
 permalink: /data-use/
 description: How we protect participating families, and what we ask of researchers who use BabyView data
 nav: true
-nav_order: 2
+nav_order: 3
 horizontal: false
 ---
 
@@ -32,10 +32,10 @@ Please read the full agreement and its [Statement of Rights and Responsibilities
 
 ## Using AI models with BabyView data
 
-These guidelines follow from the agreement's terms: the data stay with authorized researchers, are kept secure, and are used for non-commercial research. Sending BabyView data to a service that keeps it or trains on it is a form of redistribution.
+Databrary's policy is that restricted-access data may not be shared with any outside commercial service that could reuse the data in any way. Databrary has told us that the signed access agreement already precludes this, and that more explicit language is being added to the agreement and the site's terms of use.
 
+- **Use local models, or services that cannot train on your data.** When you analyze BabyView data with AI models (for example, for object detection, captioning, or transcription), either run the models locally or use a commercial service only under terms that bar the provider from training on or otherwise reusing your inputs (for example, Google Cloud's Vertex AI). This applies to model APIs and [coding agents]({{ '/access/' | relative_url }}#using-coding-agents) alike. Never upload BabyView data to consumer chatbots. Check with your IT office and IRB about which services your institution has approved.
 - **Keep BabyView data out of frontier model training.** Do not include BabyView data in training datasets for large-scale commercial or "frontier" models, or contribute it to datasets that may be used this way.
-- **Use local models, or APIs with no-training terms.** When you analyze BabyView data with AI models (for example, for object detection, captioning, or transcription), either run the models locally or use a service whose terms bar the provider from training on your inputs (for example, Google Cloud's Vertex AI). Do not upload BabyView data to consumer chatbots.
 
 ## Additional requests from the BabyView team
 

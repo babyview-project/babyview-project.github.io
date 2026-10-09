@@ -14,6 +14,8 @@ horizontal: false
 
 The BabyView project is intended to create openly available data for researchers to use to both characterize early learning environments as well as to build computational models to try to better understand cognition. Our goal is to collect one child's-years worth of data (4,000 hours). So far we have collected **{{ bv.total_hours | number_with_delimiter }} hours** of video from **{{ bv.total_children }} children**. We anticipate that active data collection will be ongoing through the 2026 – 2027 academic year.
 
+**Want to use the data?** See [how to get access]({{ '/access/' | relative_url }}).
+
 <div style="text-align: center;">
 <video width="320" controls>
   <source src="{{ '/assets/video/owl_puzzle.mp4' | relative_url }}" type="video/mp4">
@@ -42,19 +44,9 @@ BabyView is longitudinal: most families record over many months, so each child c
 
 # Data releases
 
-[The main BabyView dataset](https://www.databrary.org/volume/1882) is available on Databrary, as is [the BabyView Preschool dataset](https://databrary.org/volume/1856). [BabyView IMU data](https://stanford.redivis.com/datasets/e7we-asyc0tmc7) (accelerometer and gyroscope) are available on Redivis.
+[The main BabyView dataset](https://www.databrary.org/volume/1882) is available on Databrary, as is [the BabyView Preschool dataset](https://databrary.org/volume/1856). [BabyView IMU data](https://stanford.redivis.com/datasets/e7we-asyc0tmc7) (accelerometer and gyroscope) are available on Redivis. See [how to get access]({{ '/access/' | relative_url }}).
 
 {% include bv_releases_table.liquid %}
-
----
-
-# Accessing the data
-
-Because BabyView videos show children and families in their homes, the videos are shared only with authorized researchers through [Databrary](https://nyu.databrary.org/), a restricted-access video library funded by the US National Institutes of Health.
-
-1. **Get authorized on Databrary.** Your institution signs the [Databrary Access Agreement](https://databrary.org/about/agreement/agreement), which makes you an Authorized Investigator. Students and staff can get access as Affiliates of an Authorized Investigator.
-2. **Read our [data use and ethics guidelines]({{ '/data-use/' | relative_url }})** before working with the data. They explain how the agreement applies to BabyView, including when you use AI models.
-3. **Access the BabyView volumes** linked above.
 
 ---
 
@@ -71,13 +63,3 @@ We transcribe and diarize all videos in the dataset and include these annotation
 ## Accelerometer/gyroscope data
 
 The BabyView camera also records accelerometer and gyroscope data, which can be used to estimate children's head motion while they are wearing the camera. These data are available as the [BabyView IMU data release on Redivis](https://stanford.redivis.com/datasets/e7we-asyc0tmc7). Each file contains the GoPro telemetry from one BabyView recording, extracted from the video's GPMF track: a merged ~200 Hz IMU CSV file with accelerometer, gyroscope, and gravity measurements, as well as additional camera telemetry streams such as orientation quaternions (CORI/IORI).
-
----
-
-# How to cite
-
-If you use BabyView data, please cite the dataset paper:
-
-> Long, B. L., Sparks, R. Z., Xiang, V., Stojanov, S., Yin, Z., Keene, G., Tan, A. W. M., Feng, S. Y., Nag, A., Zhuang, C., Marchman, V. A., Yamins, D. L. K., & Frank, M. C. (2025). The BabyView dataset: High-resolution egocentric videos of infants' and young children's everyday experiences. _Proceedings of the Cognitive Computational Neuroscience Conference._ [[pdf]](https://openreview.net/pdf?id=bbv4CA2noZ)
-
-The Databrary Access Agreement also asks you to cite the Databrary volumes you use. Each volume page gives its citation.
