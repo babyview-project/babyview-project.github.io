@@ -9,23 +9,37 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-people",
-          title: "People",
-          description: "Meet the BabyView team!",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/people/";
-          },
-        },{id: "nav-dataset",
+  },{id: "nav-dataset",
           title: "Dataset",
-          description: "Information about the current BabyView dataset",
+          description: "What&#39;s in the BabyView dataset and how to access it",
           section: "Navigation",
           handler: () => {
             window.location.href = "/dataset/";
           },
+        },{id: "nav-access",
+          title: "Access",
+          description: "How researchers can get access to BabyView data",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/access/";
+          },
+        },{id: "nav-data-use-amp-ethics",
+          title: "Data Use &amp; Ethics",
+          description: "How we protect participating families, and what we ask of researchers who use BabyView data",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/data-use/";
+          },
+        },{id: "nav-for-families",
+          title: "For Families",
+          description: "Information for families who participate in BabyView, or are thinking about it",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/families/";
+          },
         },{id: "nav-camera",
           title: "Camera",
-          description: "Information about the BabyView camera design",
+          description: "The BabyView camera design and its versions",
           section: "Navigation",
           handler: () => {
             window.location.href = "/camera/";
@@ -36,6 +50,13 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
+          },
+        },{id: "nav-people",
+          title: "People",
+          description: "Meet the BabyView team!",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/people/";
           },
         },{id: "post-a-post-with-plotly-js",
         
