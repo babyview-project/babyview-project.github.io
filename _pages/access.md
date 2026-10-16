@@ -27,6 +27,8 @@ See the [dataset page]({{ '/dataset/' | relative_url }}) for what each release c
 3. **Read our [data use and ethics guidelines]({{ '/data-use/' | relative_url }})** before working with the data. They explain how the agreement applies to BabyView, including when you use AI models.
 4. **Access the BabyView volumes** linked above.
 
+Models trained on BabyView data are available to researchers with BabyView access; see our [model-sharing policy]({{ '/data-use/' | relative_url }}#sharing-models-trained-on-babyview-data).
+
 ---
 
 # Using coding agents

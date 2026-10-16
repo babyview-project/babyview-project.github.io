@@ -37,6 +37,10 @@ Databrary's policy is that restricted-access data may not be shared with any out
 - **Use local models, or services that cannot train on your data.** When you analyze BabyView data with AI models (for example, for object detection, captioning, or transcription), either run the models locally or use a commercial service only under terms that bar the provider from training on or otherwise reusing your inputs (for example, Google Cloud's Vertex AI). This applies to model APIs and [coding agents]({{ '/access/' | relative_url }}#using-coding-agents) alike. Never upload BabyView data to consumer chatbots. Check with your IT office and IRB about which services your institution has approved.
 - **Keep BabyView data out of frontier model training.** Do not include BabyView data in training datasets for large-scale commercial or "frontier" models, or contribute it to datasets that may be used this way.
 
+## Sharing models trained on BabyView data
+
+Models trained on BabyView data can encode features of the people in the recordings, such as their faces and voices. We therefore ask that models be shared the same way as the data: any model trained or fine-tuned on BabyView data should be available only to researchers who have been granted access to BabyView on Databrary. In practice, host the weights in a gated repository (for example, a gated Hugging Face repository), and grant access only once the requester shows they have BabyView access on Databrary. The model card should explain why access is restricted, link to the [BabyView Databrary volume](https://www.databrary.org/volume/1882), and direct access requests to [babyview-study@stanford.edu](mailto:babyview-study@stanford.edu); see the [ZWM BabyView model](https://huggingface.co/awwkl/zwm-babyview-170m) for an example. If you have been given access to a gated model, please don't share the weights with others. If you aren't sure whether this applies to something you want to release, email us.
+
 ## Additional requests from the BabyView team
 
 These go beyond what the Databrary agreement requires. We ask them out of respect for the families who share their everyday lives with us.

@@ -36,7 +36,7 @@ Our lab and others use AI-based computer vision and transcription tools to analy
 Using AI tools to _analyze_ videos is different from using videos to _train_ AI models:
 
 - **Analysis tools.** The tools we use are research tools that run on our own computers or under terms that don't let companies train their models on your data. They are not commercial chatbots like ChatGPT.
-- **Model training.** Some researchers train small, non-commercial models on BabyView videos to study how children learn. Models like these can pick up features of the people in the recordings, such as voices or faces, and our [guidelines for researchers]({{ '/data-use/' | relative_url }}) prohibit attempts to get models to reproduce them.
+- **Model training.** Some researchers train small, non-commercial models on BabyView videos to study how children learn. Models like these can pick up features of the people in the recordings, such as voices or faces, and our [guidelines for researchers]({{ '/data-use/' | relative_url }}) prohibit attempts to get models to reproduce them. Models trained on BabyView videos are shared only with researchers who have been approved to access the videos.
 - **No commercial AI.** BabyView data may only be used for non-commercial research. Researchers who access the videos through Databrary may not share them with commercial services that could reuse them, such as AI services that train on uploaded data, and we ask them not to include BabyView videos in training data for large commercial AI models. We are not aware of any use of BabyView videos for commercial purposes.
 
 You can read the full [guidelines we give researchers]({{ '/data-use/' | relative_url }}).
