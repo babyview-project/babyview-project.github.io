@@ -6,7 +6,9 @@
 <div id="bv-age-hist" style="min-height: 260px"></div>
 <div id="bv-child-chart" style="min-height: 400px"></div>
 
-<script type="module">
+<script
+  type="module"
+>
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
 
   const series = {{ site.data.bv_summary.children | jsonify }};

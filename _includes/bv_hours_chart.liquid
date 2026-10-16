@@ -10,7 +10,9 @@
   <div id="bv-hours-chart" style="min-height: 360px"></div>
 </div>
 
-<script type="module">
+<script
+  type="module"
+>
   import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
 
   const weekly = {{ site.data.bv_summary.weekly | jsonify }}.map((d) => ({ ...d, week: new Date(d.week) }));
