@@ -4,7 +4,7 @@ title: contact
 permalink: /contact/
 description: Contact us.
 nav: false
-nav_order: 
+nav_order:
 horizontal: false
 ---
 

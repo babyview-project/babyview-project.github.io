@@ -3,140 +3,151 @@ layout: default
 title: people
 permalink: /people
 ---
-
 <div class="peoplelayout">
+  {% assign roles = site.data.people | group_by: 'role' %}
+  {% assign pi_group = roles | where: 'name', 'Principal Investigators' | first %}
+  {% assign pm_group = roles | where: 'name', 'Project Manager' | first %}
+  {% assign other_roles = roles | where_exp: 'role', "role.name != 'Principal Investigators' and role.name != 'Project Manager'" %}
 
- {% assign roles = site.data.people | group_by: "role" %}
- {% assign pi_group = roles | where: "name", "Principal Investigators" | first %}
- {% assign pm_group = roles | where: "name", "Project Manager" | first %}
- {% assign other_roles = roles | where_exp: "role", "role.name != 'Principal Investigators' and role.name != 'Project Manager'" %}
+  <!-- Principal Investigators and Project Manager on same row -->
+  <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start; margin-bottom: 2rem;">
+    <!-- Principal Investigators -->
+    {% if pi_group %}
+      <div style="flex: 2; min-width: 400px;">
+        <h3 style="margin-top: 1rem; margin-bottom: 1.5rem;">{{ pi_group.name }}</h3>
+        <div class="role-group" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start;">
+          {% for person in pi_group.items %}
+            <div
+              class="member"
+              style="display: flex; flex-direction: column; align-items: center; flex: 1 1 calc(16.666% - 1.25rem); min-width: 140px; max-width: 180px;"
+            >
+              {% if person.image %}
+                <img
+                  src="{{ '/assets/img/' | append: person.image | relative_url }}"
+                  alt="{{ person.name }}"
+                  style="width: 150px; height: 200px; object-fit: cover; object-position: center; border-radius: 5px; background-color: #eee; margin-bottom: 0.8rem;"
+                >
+              {% endif %}
+              <div style="text-align: center;">
+                <div style="font-size: 1.1rem; font-weight: 600; color: #86a5c4; margin-bottom: 0.3rem;">
+                  {% if person.website %}
+                    <a href="{{ person.website }}" target="_blank" rel="noopener" style="color: #86a5c4; text-decoration: none; cursor: pointer;">
+                      {{- person.name -}}
+                    </a>
+                  {% else %}
+                    {{ person.name }}
+                  {% endif %}
+                </div>
+                {% if person.position %}
+                  <div style="font-style: italic; font-size: 0.9rem; color: #666;">{{ person.position }}</div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
 
- <!-- Principal Investigators and Project Manager on same row -->
- <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start; margin-bottom: 2rem;">
-   
-   <!-- Principal Investigators -->
-   {% if pi_group %}
-   <div style="flex: 2; min-width: 400px;">
-     <h3 style="margin-top: 1rem; margin-bottom: 1.5rem;">{{ pi_group.name }}</h3>
-     <div class="role-group" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start;">
-       {% for person in pi_group.items %}
-         <div class="member" style="display: flex; flex-direction: column; align-items: center; flex: 1 1 calc(16.666% - 1.25rem); min-width: 140px; max-width: 180px;">
-           {% if person.image %}
-             <img 
-               src="{{ '/assets/img/' | append: person.image }}" 
-               alt="{{ person.name }}" 
-               style="width: 150px; height: 200px; object-fit: cover; object-position: center; border-radius: 5px; background-color: #eee; margin-bottom: 0.8rem;"
-             >
-           {% endif %}
-           <div style="text-align: center;">
-             <div style="font-size: 1.1rem; font-weight: 600; color: #86a5c4; margin-bottom: 0.3rem;">
-               {% if person.website %}
-                 <a href="{{ person.website }}" target="_blank" rel="noopener" style="color: #86a5c4; text-decoration: none; cursor: pointer;">{{ person.name }}</a>
-               {% else %}
-                 {{ person.name }}
-               {% endif %}
-             </div>
-             {% if person.position %}
-               <div style="font-style: italic; font-size: 0.9rem; color: #666;">{{ person.position }}</div>
-             {% endif %}
-           </div>
-         </div>
-       {% endfor %}
-     </div>
-   </div>
-   {% endif %}
+    <!-- Project Manager -->
+    {% if pm_group %}
+      <div style="flex: 1; min-width: 200px;">
+        <h3 style="margin-top: 1rem; margin-bottom: 1.5rem;">{{ pm_group.name }}</h3>
+        <div class="role-group" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start;">
+          {% for person in pm_group.items %}
+            <div
+              class="member"
+              style="display: flex; flex-direction: column; align-items: center; flex: 1 1 calc(16.666% - 1.25rem); min-width: 140px; max-width: 180px;"
+            >
+              {% if person.image %}
+                <img
+                  src="{{ '/assets/img/' | append: person.image | relative_url }}"
+                  alt="{{ person.name }}"
+                  style="width: 150px; height: 200px; object-fit: cover; object-position: center; border-radius: 5px; background-color: #eee; margin-bottom: 0.8rem;"
+                >
+              {% endif %}
+              <div style="text-align: center;">
+                <div style="font-size: 1.1rem; font-weight: 600; color: #86a5c4; margin-bottom: 0.3rem;">
+                  {% if person.website %}
+                    <a href="{{ person.website }}" target="_blank" rel="noopener" style="color: #86a5c4; text-decoration: none; cursor: pointer;">
+                      {{- person.name -}}
+                    </a>
+                  {% else %}
+                    {{ person.name }}
+                  {% endif %}
+                </div>
+                {% if person.position %}
+                  <div style="font-style: italic; font-size: 0.9rem; color: #666;">{{ person.position }}</div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
 
-   <!-- Project Manager -->
-   {% if pm_group %}
-   <div style="flex: 1; min-width: 200px;">
-     <h3 style="margin-top: 1rem; margin-bottom: 1.5rem;">{{ pm_group.name }}</h3>
-     <div class="role-group" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start;">
-       {% for person in pm_group.items %}
-         <div class="member" style="display: flex; flex-direction: column; align-items: center; flex: 1 1 calc(16.666% - 1.25rem); min-width: 140px; max-width: 180px;">
-           {% if person.image %}
-             <img 
-               src="{{ '/assets/img/' | append: person.image }}" 
-               alt="{{ person.name }}" 
-               style="width: 150px; height: 200px; object-fit: cover; object-position: center; border-radius: 5px; background-color: #eee; margin-bottom: 0.8rem;"
-             >
-           {% endif %}
-           <div style="text-align: center;">
-             <div style="font-size: 1.1rem; font-weight: 600; color: #86a5c4; margin-bottom: 0.3rem;">
-               {% if person.website %}
-                 <a href="{{ person.website }}" target="_blank" rel="noopener" style="color: #86a5c4; text-decoration: none; cursor: pointer;">{{ person.name }}</a>
-               {% else %}
-                 {{ person.name }}
-               {% endif %}
-             </div>
-             {% if person.position %}
-               <div style="font-style: italic; font-size: 0.9rem; color: #666;">{{ person.position }}</div>
-             {% endif %}
-           </div>
-         </div>
-       {% endfor %}
-     </div>
-   </div>
-   {% endif %}
- </div>
-
- <!-- All other roles -->
- {% for role_group in other_roles %}
-   <h3 style="margin-top: 1rem; margin-bottom: 1.5rem;">{{ role_group.name }}</h3>
-   <div class="role-group" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start;">
-     {% for person in role_group.items %}
-       <div class="member" style="display: flex; flex-direction: column; align-items: center; flex: 1 1 calc(16.666% - 1.25rem); min-width: 140px; max-width: 180px;">
-         {% if person.image %}
-           <img 
-             src="{{ '/assets/img/' | append: person.image }}" 
-             alt="{{ person.name }}" 
-             style="width: 150px; height: 200px; object-fit: cover; object-position: center; border-radius: 5px; background-color: #eee; margin-bottom: 0.8rem;"
-           >
-         {% endif %}
-         <div style="text-align: center;">
-           <div style="font-size: 1.1rem; font-weight: 600; color: #86a5c4; margin-bottom: 0.3rem;">
-             {% if person.website %}
-               <a href="{{ person.website }}" target="_blank" rel="noopener" style="color: #86a5c4; text-decoration: none; cursor: pointer;">{{ person.name }}</a>
-             {% else %}
-               {{ person.name }}
-             {% endif %}
-           </div>
-           {% if person.position %}
-             <div style="font-style: italic; font-size: 0.9rem; color: #666;">{{ person.position }}</div>
-           {% endif %}
-         </div>
-       </div>
-     {% endfor %}
-   </div>
- {% endfor %}
-
+  <!-- All other roles -->
+  {% for role_group in other_roles %}
+    <h3 style="margin-top: 1rem; margin-bottom: 1.5rem;">{{ role_group.name }}</h3>
+    <div class="role-group" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-start;">
+      {% for person in role_group.items %}
+        <div
+          class="member"
+          style="display: flex; flex-direction: column; align-items: center; flex: 1 1 calc(16.666% - 1.25rem); min-width: 140px; max-width: 180px;"
+        >
+          {% if person.image %}
+            <img
+              src="{{ '/assets/img/' | append: person.image | relative_url }}"
+              alt="{{ person.name }}"
+              style="width: 150px; height: 200px; object-fit: cover; object-position: center; border-radius: 5px; background-color: #eee; margin-bottom: 0.8rem;"
+            >
+          {% endif %}
+          <div style="text-align: center;">
+            <div style="font-size: 1.1rem; font-weight: 600; color: #86a5c4; margin-bottom: 0.3rem;">
+              {% if person.website %}
+                <a href="{{ person.website }}" target="_blank" rel="noopener" style="color: #86a5c4; text-decoration: none; cursor: pointer;">
+                  {{- person.name -}}
+                </a>
+              {% else %}
+                {{ person.name }}
+              {% endif %}
+            </div>
+            {% if person.position %}
+              <div style="font-style: italic; font-size: 0.9rem; color: #666;">{{ person.position }}</div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
 </div>
 
 <style>
-@media (max-width: 768px) {
-  .member {
-    flex: 1 1 calc(50% - 0.75rem) !important;
-    min-width: 140px !important;
+  @media (max-width: 768px) {
+    .member {
+      flex: 1 1 calc(50% - 0.75rem) !important;
+      min-width: 140px !important;
+    }
   }
-}
 
-@media (max-width: 480px) {
-  .member {
-    flex: 1 1 100% !important;
-    min-width: unset !important;
-    max-width: 300px !important;
+  @media (max-width: 480px) {
+    .member {
+      flex: 1 1 100% !important;
+      min-width: unset !important;
+      max-width: 300px !important;
+    }
+
+    div[style*='display: flex'][style*='gap: 3rem'] {
+      flex-direction: column !important;
+      gap: 2rem !important;
+    }
   }
-  
-  div[style*="display: flex"][style*="gap: 3rem"] {
-    flex-direction: column !important;
-    gap: 2rem !important;
+
+  .member a {
+    transition: color 0.2s ease;
   }
-}
 
-.member a {
-  transition: color 0.2s ease;
-}
-
-.member a:hover {
-  color: #5a7a9a !important;
-}
+  .member a:hover {
+    color: #5a7a9a !important;
+  }
 </style>
