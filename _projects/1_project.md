@@ -23,8 +23,6 @@ The analyses of infants' visual experiences reveal patterns that may help explai
     A: An example annotated frame from the infant view by YOLOE (You Only Look Once Efficient model); each bounding box indicates a detected object. B: Top 50 object categories detected in the dataset, showing a right-skewed distribution; objects are colored according to their real-world size and animacy (including depictions). C: Log percentage of frames with each object by the estimated age in months at which the corresponding word is produced; line indicates a linear fit with a 95% confidence interval.
 </div>
 
-
-
 You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
 Say you wanted to write a bit about your project before you posted the rest of the images.
 You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.

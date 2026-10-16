@@ -4,9 +4,9 @@
 
 title: The BabyView Project # the website title (if blank, full name will be used instead)
 first_name: The BabyView Project
-middle_name: 
-last_name: 
-contact_note: 
+middle_name:
+last_name:
+contact_note:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Project page for BabyView, which uses head-mounted cameras to gather data about children's visual experience.
 footer_text: >
@@ -247,7 +247,6 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-
   style: apa
   locale: en
 

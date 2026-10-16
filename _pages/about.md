@@ -44,11 +44,12 @@ So far we have collected **{{ bv.total_hours | number_with_delimiter }} hours** 
 
 ## Funding
 
-The BabyView project acknowledges generous support from: 
+The BabyView project acknowledges generous support from:
+
 - The Stanford Human-Centered AI Initiative (HAI) Hoffman-Yee grant program
 - Schmidt Futures
-- Meta, Inc. 
+- Meta, Inc.
 - The Stanford Center for the Study of Language and Information John Crosby Olney Fund
-- Amazon, Inc. 
+- Amazon, Inc.
 - Compute support from the Microsoft Accelerating Foundation Models Research (AFMR) program
 - NIH K99HD108386 to BLL
