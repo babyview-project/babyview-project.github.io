@@ -35,7 +35,7 @@ Models trained on BabyView data are available to researchers with BabyView acces
 
 Coding agents (such as Claude Code or Codex) send the files they read to the model provider. Treat an agent like any other AI service under our [guidelines]({{ '/data-use/' | relative_url }}): only let it open BabyView videos, frames, audio, or transcripts if the model runs locally or under terms that bar the provider from training on or otherwise reusing your inputs. Check which terms your agent runs under, since some individual plans allow training on your sessions.
 
-A template `AGENTS.md` for setting up these guardrails is in preparation.
+To set up these guardrails, download our <a href="{{ '/assets/files/AGENTS.md' | relative_url }}" download="AGENTS.md">BabyView rules for coding agents (<code>AGENTS.md</code>)</a> and add them to your agent's instructions. The rules apply to every project, so install them globally: for Codex, save the file as `~/.codex/AGENTS.md`; for Claude Code, add its contents to `~/.claude/CLAUDE.md`. You can also mark a folder as holding BabyView data by putting an empty file named `BABYVIEW_DATA` in it.
 
 ---
 
