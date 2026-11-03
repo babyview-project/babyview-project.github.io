@@ -70,7 +70,8 @@ permissions:
 jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
-    runs-on: ubuntu-latest
+    # pinned: the Ruby version below isn't built for newer images
+    runs-on: ubuntu-24.04
     env:
       AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
     steps:
