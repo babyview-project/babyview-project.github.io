@@ -142,19 +142,18 @@ Versions overlap in time: several builds are in use at once, so the dataset incl
 
 <div class="row mb-4">
   <div class="col-md-5">
-    <div class="d-flex align-items-center justify-content-center text-center bv-caption" style="aspect-ratio: 4 / 3; border: 1px dashed var(--global-divider-color);">Photo to come</div>
+    <img src="{{ '/assets/img/bv3_1_camera.webp' | relative_url }}" alt="BabyView 3.1 camera on a helmet" class="img-fluid" />
   </div>
   <div class="col-md-7">
     <p>The 3.0 build with a different camera, the GoPro LIT HERO.</p>
   </div>
 </div>
 
-## BabyView 3.2 (in preparation)
+## BabyView 3.2 
 
-<!-- TODO: add a photo when available -->
 <div class="row mb-4">
   <div class="col-md-5">
-    <div class="d-flex align-items-center justify-content-center text-center bv-caption" style="aspect-ratio: 4 / 3; border: 1px dashed var(--global-divider-color);">Photo to come</div>
+    <img src="{{ '/assets/img/bv3_2_camera.webp' | relative_url }}" alt="BabyView 3.2 camera on a helmet" class="img-fluid" />
   </div>
   <div class="col-md-7">
     <p>A new mount that gives the camera a better view angle.</p>
