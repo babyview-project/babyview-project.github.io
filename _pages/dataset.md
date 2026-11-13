@@ -14,7 +14,7 @@ horizontal: false
 
 The BabyView project is intended to create openly available data for researchers to use to both characterize early learning environments as well as to build computational models to try to better understand cognition. Our goal is to collect one child's-years worth of data (4,000 hours). So far we have collected **{{ bv.total_hours | number_with_delimiter }} hours** of video from **{{ bv.total_children }} children**. We anticipate that active data collection will be ongoing through the 2026 – 2027 academic year.
 
-**Want to use the data?** See [how to get access]({{ '/access/' | relative_url }}).
+**Want to use the data?** See [how to get access]({{ '/access/' | relative_url }}). Researchers with access can also use [models trained on BabyView]({{ '/access/' | relative_url }}#models-trained-on-babyview).
 
 <div style="text-align: center;">
 <video width="320" controls>

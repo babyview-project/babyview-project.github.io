@@ -31,7 +31,7 @@ versions:
     status: In use
   - version: "3.2"
     attachment: New mount with a better view angle
-    status: In preparation
+    status: In use
 ---
 
 # The BabyView camera
@@ -149,7 +149,7 @@ Versions overlap in time: several builds are in use at once, so the dataset incl
   </div>
 </div>
 
-## BabyView 3.2 
+## BabyView 3.2
 
 <div class="row mb-4">
   <div class="col-md-5">

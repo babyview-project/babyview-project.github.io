@@ -27,7 +27,16 @@ See the [dataset page]({{ '/dataset/' | relative_url }}) for what each release c
 3. **Read our [data use and ethics guidelines]({{ '/data-use/' | relative_url }})** before working with the data. They explain how the agreement applies to BabyView, including when you use AI models.
 4. **Access the BabyView volumes** linked above.
 
-Models trained on BabyView data are available to researchers with BabyView access; see our [model-sharing policy]({{ '/data-use/' | relative_url }}#sharing-models-trained-on-babyview-data).
+---
+
+# Models trained on BabyView
+
+Researchers with BabyView access can also use models trained on BabyView data. Under our [model-sharing policy]({{ '/data-use/' | relative_url }}#sharing-models-trained-on-babyview-data), these models are gated: request access on each model's Hugging Face page and follow its instructions for showing that you have BabyView access on Databrary.
+
+- [Word-learning vision–language models](https://huggingface.co/collections/mcxfrank/babyview-word-learning-vlms): cross-situational word learners trained on BabyView.
+- [DINOv3 vision encoders](https://huggingface.co/collections/mcxfrank/babyview-dino-models) trained on BabyView (ViT-S, ViT-B and ViT-L).
+- Zero-shot world models ([Aw et al., 2026](https://arxiv.org/abs/2604.10333)): [ZWM 170M](https://huggingface.co/awwkl/zwm-babyview-170m) and [ZWM 1B](https://huggingface.co/awwkl/zwm-babyview-1b).
+- [DINOv3 ViT-L](https://huggingface.co/awwkl/dinov3-vitl-babyview) and [V-JEPA 2 ViT-L](https://huggingface.co/awwkl/vjepa2-vitl-fpc16-256-babyview) trained on BabyView.
 
 ---
 
