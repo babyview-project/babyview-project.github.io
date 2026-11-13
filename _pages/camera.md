@@ -31,7 +31,7 @@ versions:
     status: In use
   - version: "3.2"
     attachment: New mount with a better view angle
-    status: In preparation
+    status: In use
 ---
 
 # The BabyView camera
