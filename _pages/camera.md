@@ -149,7 +149,7 @@ Versions overlap in time: several builds are in use at once, so the dataset incl
   </div>
 </div>
 
-## BabyView 3.2 
+## BabyView 3.2
 
 <div class="row mb-4">
   <div class="col-md-5">
